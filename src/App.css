@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 50vh;
+  min-width: 50vh;
+}
+.contentsCarrier{
+  flex-direction: column;
+
+}
+.photosize{
+  width: 50px;
+  height: 50px;
+}
+.sidebar{
+  display: flex;
+  flex-direction: row;
+}

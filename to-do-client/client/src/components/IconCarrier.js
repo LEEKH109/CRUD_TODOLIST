@@ -4,13 +4,31 @@ import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import mainId from '../static/data.js';
 
+export const Main =styled.div`
+  width: 450px;
+  height: 600px;
+  border: 2px solid black;
+  border-radius: 0 0 25px 25px;
+  background-color: antiquewhite;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+`;
+export const PenIcon = styled.img`
+  width: 20px;
+  height: 20px;
+`
+export const DeleteIcon = styled.img`
+  width: 20px;
+  height: 20px;
+`
 function Todo({ todo, index, barTodo, removeTodo}) {
     return (
       <div className="todo">
         <span style={{ textDecoration: todo.isDone ? "line-through" : "" }}>{todo.text}</span>
         <div>
-          <Button variant="outline-success" onClick={() => barTodo(index)}>✓</Button>{' '}
-          <Button variant="outline-danger" onClick={() => removeTodo(index)}>✕</Button>  
+          <Button variant="outline-success" onClick={() => barTodo(index)}><PenIcon src='https://cdn-icons-png.flaticon.com/512/1250/1250925.png'/></Button>{' '}
+          <Button variant="outline-danger" onClick={() => removeTodo(index)}><DeleteIcon src='https://cdn-icons-png.flaticon.com/512/3405/3405244.png'/></Button>  
         </div>
       </div>
     );
@@ -39,35 +57,24 @@ function Todo({ todo, index, barTodo, removeTodo}) {
     );
   }
 
-export const Main =styled.div`
-  width: 450px;
-  height: 600px;
-  border: 2px solid black;
-  border-radius: 0 0 25px 25px;
-  background-color: antiquewhite;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-`;
+
 
 
 function IconCarrier(){
     const [todos, setTodos] = React.useState([
         { text: mainId[0].sampletodo[0], isDone: false },
-        { text: mainId[0].sampletodo[1], isDone: false }
+        { text: mainId[0].sampletodo[1], isDone: false },
+        { text: mainId[0].sampletodo[2], isDone: false }
       ]);
-    
       const addTodo = text => {
         const newTodos = [...todos, { text }];
         setTodos(newTodos);
       };
-    
       const barTodo = index => {
         const newTodos = [...todos];
         newTodos[index].isDone = true;
         setTodos(newTodos);
       };
-    
       const removeTodo = index => {
         const newTodos = [...todos];
         newTodos.splice(index, 1);
@@ -78,7 +85,6 @@ function IconCarrier(){
     <div>
     <div className="app">
       <div className="container">
-        <h1 className="text-center mb-4">Todo List</h1>
         <FormTodo addTodo={addTodo} />
         <div>
           {todos.map((todo, index) => (

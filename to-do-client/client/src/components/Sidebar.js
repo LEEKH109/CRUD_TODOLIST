@@ -2,9 +2,8 @@ import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 
 export const Sidebar =styled.div`
-  width: 250px;
+  width: 50px;
   height: 850px;
-  border: 2px solid black;
   margin-top: 200px;
 `;
 export const Carrier = styled.div`
@@ -37,8 +36,6 @@ export const ModalBackdrop = styled.div`
 export const ModalContainer = styled.div`
   height: 15rem;
   text-align: end;
-  margin: 120px auto;
-  border: 3px solid red;
   z-index: 2;
   bottom: 10rem;
 `;
@@ -46,7 +43,7 @@ export const ModalContainer = styled.div`
 export const ModalBtn = styled.button`
   background-color: rgba(255,255,255,0);
   border: none;
-  padding: 5rem;
+  padding: 400px 0px 0px 20px;
   border-radius: 30px;
   cursor: pointer;
 `;
@@ -58,7 +55,7 @@ export const ModalView = styled.div.attrs(props => ({
     border-radius: 10px;
     border: 2px solid black;
     background-color: rgba(255,255,255,0);
-    width: 250px;
+    width: 300px;
     height: 150px;
 
     > span.close-btn {
